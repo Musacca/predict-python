@@ -30,6 +30,7 @@ class RefactorProof(TestCase):
         )
         result, _ = calculate(job)
         del result['elapsed_time']
+        print(result)
         self.assertDictEqual(result, {'f1score': 1.0, 'acc': 1.0, 'true_positive': '--',
                                       'true_negative': '--', 'false_negative': '--', 'false_positive': '--',
                                       'precision': 1.0, 'recall': 1.0,
@@ -51,7 +52,6 @@ class RefactorProof(TestCase):
         )
         result, _ = calculate(job)
         del result['elapsed_time']
-        print(result)
         self.assertDictEqual(result, {'f1score': 0.748898678414097, 'acc': 0.995475113122172, 'true_positive': '--',
                                       'true_negative': '--', 'false_negative': '--', 'false_positive': '--',
                                       'precision': 0.75, 'recall': 0.7478070175438596,
